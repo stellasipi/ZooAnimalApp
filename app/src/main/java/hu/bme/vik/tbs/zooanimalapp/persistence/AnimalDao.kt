@@ -16,7 +16,7 @@ interface AnimalDao {
     suspend fun insertAnimal(animal: Animal): Long
 
     @Insert
-    suspend fun insertAnimals(vararg animal: Animal): List<Long>
+    suspend fun insertAnimal(vararg animal: Animal): List<Long>
 
     @Delete
     suspend fun deleteAnimal(animal: Animal)
