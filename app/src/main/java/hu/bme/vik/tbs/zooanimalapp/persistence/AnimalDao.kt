@@ -1,26 +1,22 @@
 package hu.bme.vik.tbs.zooanimalapp.persistence
 
-import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import hu.bme.vik.tbs.zooanimalapp.model.Animal
 
 @Dao
 interface AnimalDao {
-    @Query("SELECT * FROM animal")
-    fun getAllAnimals(): LiveData<List<Animal>>
+    @Query("SELECT * FROM Animal")
+    fun getAllAnimals(): List<Animal>
 
-    @Insert
-    suspend fun insertAnimal(animal: Animal): Long
+    @Query("SELECT * FROM Animal WHERE id = :id_")
+    fun getAnimalById(id_: Long): Animal?
 
-    @Insert
-    suspend fun insertAnimals(vararg animal: Animal): List<Long>
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAnimal(animal: Animal)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAnimalList(animals: List<Animal>)
 
     @Delete
     suspend fun deleteAnimal(animal: Animal)
-
-    @Query("DELETE FROM animal")
-    suspend fun deleteAllAnimal()
 }

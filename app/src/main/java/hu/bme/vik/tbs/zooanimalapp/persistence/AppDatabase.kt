@@ -1,4 +1,10 @@
 package hu.bme.vik.tbs.zooanimalapp.persistence
 
-class AppDatabase {
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import hu.bme.vik.tbs.zooanimalapp.model.Animal
+
+@Database(entities = [Animal::class], version = 1, exportSchema = true)
+abstract class AppDatabase : RoomDatabase() {
+    abstract fun animalDao(): AnimalDao
 }
