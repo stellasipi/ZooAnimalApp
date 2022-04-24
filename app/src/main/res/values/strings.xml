@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Zoo Animal App</string>
+    <string name="database">ZooAnimal.db</string>
 </resources>
