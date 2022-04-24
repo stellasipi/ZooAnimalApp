@@ -1,0 +1,83 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Zoo Animals"
+host: "zoo-animal-api.herokuapp.com"
+tags:
+- name: "animal"
+schemes:
+- "https"
+paths:
+  /animals/rand:
+    get:
+      tags:
+      - "animal"
+      summary: "Get a random animal"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/Animal"
+  /animals/rand/{number}:
+    get:
+      tags:
+      - "animal"
+      summary: "Get specific amount of a random animals"
+      description: "number is between 1 to 10"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "number"
+        in: "path"
+        minimum: 1
+        maximum: 10
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ArrayOfAnimals"
+        "400":
+          description: "Number parameter is out of range"
+
+definitions:
+  Animal:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+      name:
+        type: "string"
+      latin_name:
+        type: "string"
+      animal_type:
+        type: "string"
+      active_time:
+        type: "string"
+      length_min:
+        type: "integer"
+      length_max:
+        type: "integer"
+      weight_min:
+        type: "integer"
+      weight_max:
+        type: "integer"
+      lifespan:
+        type: "integer"
+      habitat:
+        type: "string"
+      diet:
+        type: "string"
+      geo_range:
+        type: "string"
+      image_link:
+        type: "string"
+  ArrayOfAnimals:
+    type: "array"
+    minItems: 1
+    maxItems: 10
+    items:
+      $ref: "#/definitions/Animal"
