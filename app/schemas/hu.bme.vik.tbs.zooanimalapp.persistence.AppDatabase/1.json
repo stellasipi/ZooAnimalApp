@@ -1,0 +1,112 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "60b6ff9755fa7ac8b6c65d396a12dc14",
+    "entities": [
+      {
+        "tableName": "Animal",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `name` TEXT NOT NULL, `latinName` TEXT NOT NULL, `imageLink` TEXT NOT NULL, `animalType` TEXT NOT NULL, `lifespan` INTEGER NOT NULL, `habitat` TEXT NOT NULL, `diet` TEXT NOT NULL, `geoRange` TEXT NOT NULL, `activeTime` TEXT NOT NULL, `lengthMin` REAL NOT NULL, `lengthMax` REAL NOT NULL, `weightMin` INTEGER NOT NULL, `weightMax` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "latinName",
+            "columnName": "latinName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "imageLink",
+            "columnName": "imageLink",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "animalType",
+            "columnName": "animalType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lifespan",
+            "columnName": "lifespan",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "habitat",
+            "columnName": "habitat",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "diet",
+            "columnName": "diet",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "geoRange",
+            "columnName": "geoRange",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "activeTime",
+            "columnName": "activeTime",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lengthMin",
+            "columnName": "lengthMin",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lengthMax",
+            "columnName": "lengthMax",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weightMin",
+            "columnName": "weightMin",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weightMax",
+            "columnName": "weightMax",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '60b6ff9755fa7ac8b6c65d396a12dc14')"
+    ]
+  }
+}
