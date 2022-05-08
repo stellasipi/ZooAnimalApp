@@ -1,4 +1,10 @@
 package hu.bme.vik.tbs.zooanimalapp.ui.details
 
-class DetailRepository {
+import hu.bme.vik.tbs.zooanimalapp.persistence.AnimalDao
+import javax.inject.Inject
+
+class DetailRepository @Inject constructor(
+    private val animalDao: AnimalDao
+) {
+    // TODO
 }

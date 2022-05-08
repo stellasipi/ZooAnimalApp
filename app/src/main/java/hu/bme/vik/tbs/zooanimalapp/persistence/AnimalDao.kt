@@ -6,10 +6,10 @@ import hu.bme.vik.tbs.zooanimalapp.model.Animal
 @Dao
 interface AnimalDao {
     @Query("SELECT * FROM Animal")
-    fun getAllAnimals(): List<Animal>
+    suspend fun getAllAnimals(): List<Animal>
 
     @Query("SELECT * FROM Animal WHERE id = :id_")
-    fun getAnimalById(id_: Long): Animal?
+    suspend fun getAnimalById(id_: Long): Animal?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAnimal(animal: Animal)
