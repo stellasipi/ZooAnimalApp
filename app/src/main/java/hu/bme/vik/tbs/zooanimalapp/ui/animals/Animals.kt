@@ -26,7 +26,8 @@ import hu.bme.vik.tbs.zooanimalapp.R
 import hu.bme.vik.tbs.zooanimalapp.extensions.visible
 import hu.bme.vik.tbs.zooanimalapp.model.Animal
 import hu.bme.vik.tbs.zooanimalapp.ui.main.MainViewModel
-import hu.bme.vik.tbs.zooanimalapp.ui.theme.Purple200
+import hu.bme.vik.tbs.zooanimalapp.ui.theme.Grey500
+import hu.bme.vik.tbs.zooanimalapp.ui.theme.White
 
 @Composable
 fun Animals(
@@ -48,7 +49,7 @@ fun Animals(
             },
             bottomBar = {
                 BottomNavigation(
-                    backgroundColor = Purple200,
+                    backgroundColor = Color.Gray,
                     modifier = Modifier
                         .navigationBarsHeight(56.dp)
                 ) {
@@ -70,8 +71,6 @@ fun Animals(
             Crossfade(selectedTab) { destination ->
                 when (destination) {
                     ZooHomeTab.HOME -> RadioAnimals(modifier, animals, selectAnimal)
-//                    DisneyHomeTab.RADIO -> RadioPosters(modifier, posters, selectPoster)
-//                    DisneyHomeTab.LIBRARY -> LibraryPosters(modifier, posters, selectPoster)
                 }
             }
         }
@@ -93,7 +92,7 @@ fun Animals(
 private fun AnimalAppBar() {
     TopAppBar(
         elevation = 6.dp,
-        backgroundColor = Purple200,
+        backgroundColor = Color.Gray,
         modifier = Modifier.height(58.dp)
     ) {
         Text(
@@ -101,7 +100,7 @@ private fun AnimalAppBar() {
                 .padding(8.dp)
                 .align(Alignment.CenterVertically),
             text = stringResource(R.string.app_name),
-            color = Color.White,
+            color = White,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold
         )
@@ -112,15 +111,11 @@ enum class ZooHomeTab(
     @StringRes val title: Int,
     val icon: ImageVector
 ) {
-    HOME(R.string.menu_home, Icons.Filled.Home)/*,
-    RADIO(R.string.menu_radio, Icons.Filled.Radio),
-    LIBRARY(R.string.menu_library, Icons.Filled.LibraryAdd)*/;
+    HOME(R.string.menu_home, Icons.Filled.Home);
 
     companion object {
         fun getTabFromResource(@StringRes resource: Int): ZooHomeTab {
             return when (resource) {
-                /*R.string.menu_radio -> RADIO
-                R.string.menu_library -> LIBRARY*/
                 R.string.menu_home -> HOME
                 else -> HOME
             }

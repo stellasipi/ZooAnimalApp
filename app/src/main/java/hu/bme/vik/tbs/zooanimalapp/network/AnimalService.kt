@@ -14,7 +14,4 @@ interface AnimalService {
     @GET("animals/rand/{number}")
     suspend fun fetchSpecificAmountOfAnimals(@Path("number") number: Int): ApiResponse<List<Animal>>
 
-    @GET("animals/rand/{number}")
-    suspend fun fetchSpecificAmountOfAnimalsCall(@Path("number") number: Int): Call<List<Animal>>
-
 }

@@ -17,6 +17,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.palette.graphics.Palette
@@ -85,7 +86,7 @@ private fun AnimalDetailsBody(
 
             Text(
                 text = animal.name,
-                style = MaterialTheme.typography.h1,
+                style = MaterialTheme.typography.h4,
                 overflow = TextOverflow.Ellipsis,
                 maxLines = 1,
                 modifier = Modifier
@@ -96,7 +97,7 @@ private fun AnimalDetailsBody(
             )
 
             Text(
-                text = animal.animal_type,
+                text = "Type: "+animal.animal_type,
                 style = MaterialTheme.typography.body2,
                 modifier = Modifier
                     .constrainAs(content) {
@@ -104,6 +105,86 @@ private fun AnimalDetailsBody(
                     }
                     .padding(16.dp)
             )
+
+//            Text(
+//                text = "Latin name: "+animal.latin_name,
+//                style = MaterialTheme.typography.body2,
+//                modifier = Modifier
+//                    .constrainAs(content) {
+//                        top.linkTo(title.bottom)
+//                    }
+//                    .padding(30.dp)
+//            )
+//
+//            Text(
+//                text = "Active time: "+animal.active_time,
+//                style = MaterialTheme.typography.body2,
+//                modifier = Modifier
+//                    .constrainAs(content) {
+//                        top.linkTo(title.bottom)
+//                    }
+//                    .padding(16.dp)
+//            )
+//
+//            Text(
+//                text = "Length: "+animal.length_min+" - "+animal.length_max+" m",
+//                style = MaterialTheme.typography.body2,
+//                modifier = Modifier
+//                    .constrainAs(content) {
+//                        top.linkTo(title.bottom)
+//                    }
+//                    .padding(16.dp)
+//            )
+//
+//            Text(
+//                text = "Weight: "+animal.weight_min+" - "+animal.weight_max+" kg",
+//                style = MaterialTheme.typography.body2,
+//                modifier = Modifier
+//                    .constrainAs(content) {
+//                        top.linkTo(title.bottom)
+//                    }
+//                    .padding(16.dp)
+//            )
+//
+//            Text(
+//                text = "Lifespan: "+animal.lifespan+" year(s)",
+//                style = MaterialTheme.typography.body2,
+//                modifier = Modifier
+//                    .constrainAs(content) {
+//                        top.linkTo(title.bottom)
+//                    }
+//                    .padding(16.dp)
+//            )
+//
+//            Text(
+//                text = "Habitat: "+animal.habitat,
+//                style = MaterialTheme.typography.body2,
+//                modifier = Modifier
+//                    .constrainAs(content) {
+//                        top.linkTo(title.bottom)
+//                    }
+//                    .padding(16.dp)
+//            )
+//
+//            Text(
+//                text = "Diet: "+animal.diet,
+//                style = MaterialTheme.typography.body2,
+//                modifier = Modifier
+//                    .constrainAs(content) {
+//                        top.linkTo(title.bottom)
+//                    }
+//                    .padding(16.dp)
+//            )
+//
+//            Text(
+//                text = "Geo range: "+animal.geo_range,
+//                style = MaterialTheme.typography.body2,
+//                modifier = Modifier
+//                    .constrainAs(content) {
+//                        top.linkTo(title.bottom)
+//                    }
+//                    .padding(16.dp)
+//            )
 
             ImageBalloonAnchor(
                 reference = image,
@@ -116,7 +197,7 @@ private fun AnimalDetailsBody(
 
             Icon(
                 imageVector = Icons.Filled.ArrowBack,
-                tint = Color.White,
+                tint = Color.Black,
                 contentDescription = null,
                 modifier = Modifier
                     .constrainAs(arrow) {

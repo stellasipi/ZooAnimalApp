@@ -34,9 +34,9 @@ data class Animal(
     @Json(name="length_max")
     val length_max: Double,
     @Json(name="weight_min")
-    val weight_min: Int,
+    val weight_min: Double,
     @Json(name="weight_max")
-    val weight_max: Int
+    val weight_max: Double
 ) {
     companion object {
         fun mock() = Animal(
@@ -52,8 +52,8 @@ data class Animal(
             active_time = "Diurnal",
             length_max = 43.0,
             length_min = 33.0,
-            weight_max = 10,
-            weight_min = 8
+            weight_max = 10.0,
+            weight_min = 8.0
         )
     }
 }

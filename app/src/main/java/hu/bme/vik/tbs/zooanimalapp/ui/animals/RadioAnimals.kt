@@ -31,7 +31,7 @@ fun RadioAnimals(
     animals: List<Animal>,
     selectAnimal: (Long) -> Unit = {},
 ) {
-    val listState = rememberLazyListState() // ???
+    val listState = rememberLazyListState()
     Column(
         modifier = modifier
             .statusBarsPadding()
@@ -96,7 +96,7 @@ private fun RadioAnimal(
                     .padding(horizontal = 12.dp),
                 text = animal.name,
                 textAlign = TextAlign.Center,
-                style = MaterialTheme.typography.h2
+                style = MaterialTheme.typography.h5
             )
 
             Text(
