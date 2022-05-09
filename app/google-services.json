@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "167240826310",
+    "project_id": "zoo-animal-project",
+    "storage_bucket": "zoo-animal-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167240826310:android:0e1a51f1dd52dc46c0c6c7",
+        "android_client_info": {
+          "package_name": "hu.bme.vik.tbs.zooanimalapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "167240826310-oil3igu09m59ldve0vg676snnftch9h2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZk9hyM99mM_SKevi8vkh-x-5sMv8UGjQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "167240826310-oil3igu09m59ldve0vg676snnftch9h2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
