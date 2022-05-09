@@ -22,30 +22,21 @@ class MainRepository @Inject constructor(
     @WorkerThread
     fun loadAnimals(onStart: () -> Unit, onCompletion: () -> Unit) =
         flow {
-            val posters: List<Animal> = animalDao.getAllAnimals()
-            if (posters.isEmpty()) {
+            println("FLOW")
+            val animals: List<Animal> = animalDao.getAllAnimals()
+            if (animals.isEmpty()) {
+                println("EMPTY")
                 animalService.fetchSpecificAmountOfAnimals(10)
                     .suspendOnSuccess {
+                        println("DATA:")
+                        println(data)
                         animalDao.insertAnimalList(data)
                         emit(data)
                     }
-//                animalService.fetchSpecificAmountOfAnimals(10)
-//                    .enqueue(object : Callback<List<Animal>> {
-//                        override fun onResponse(
-//                            call: Call<List<Animal>>,
-//                            response: Response<List<Animal>>
-//                        ) {
-//                            if (response.body() != null) {
-//                                //animalDao.insertAnimalList(response.body()!!)
-//                                //emit(response.body())
-//                            }
-//                        }
-//
-//                        override fun onFailure(call: Call<List<Animal>>, t: Throwable) {
-//                        }
-//                    })
             } else {
-                emit(posters)
+                println("ELSE  DATA:")
+                println(animals)
+                emit(animals)
             }
         }.onStart { onStart() }.onCompletion { onCompletion() }.flowOn(Dispatchers.IO)
 }
